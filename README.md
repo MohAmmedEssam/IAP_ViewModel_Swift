@@ -2,10 +2,14 @@
 make it easy to make in app purchase
 
 // to get your products
+
 IAPHandler.shared.fetchAvailableProducts(){ [weak self] (products) in
 
 }
+
+
 //to show them on cell or any thing like that 
+
 func CollectionViewCellHandling(product:SKProduct){
     let numberFormatter = NumberFormatter()
     numberFormatter.formatterBehavior = .behavior10_4
@@ -20,6 +24,7 @@ func CollectionViewCellHandling(product:SKProduct){
 
 
 //handle status block
+
 IAPHandler.shared.purchaseStatusBlock = {[weak self] (status) in
     guard let strongSelf = self else{ return }
         let alertView = UIAlertController(title: "", message: status.message(), preferredStyle: .alert)
@@ -31,5 +36,6 @@ IAPHandler.shared.purchaseStatusBlock = {[weak self] (status) in
 }
 
 //buy a product
+
 IAPHandler.shared.purchaseMyProduct(index: indexSelected )
 
